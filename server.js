@@ -30,6 +30,14 @@ app.get('/news', (요청, 응답) =>{
     응답.send('cloudy')
 })
 
+app.get('/list', async (요청, 응답) =>{
+    let result = await db.collection('post').find().toArray()
+    console.log(result[0].content)
+    응답.send('this is db page')
+})
+//doc에 있는 데이터 값을 /list에 들어가면 터미널에서 출력한다.
+//다음줄을 기다린다. 처리가 오래걸리는 코드는 처리완료 기다리지 않고 바로 다음줄 실행
+//await은 정해진 곳에서만 쓰여진다.
 app.get('/shop', (요청, 응답) =>{ //function() == () =>, 콜백함수 다른함수안에 함수가 들어가는 함수
     응답.send('shopping page')
 })
