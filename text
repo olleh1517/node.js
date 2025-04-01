@@ -2,3 +2,38 @@ npm install express
 
 sudo npm install -g nodemon
 nodemon server.js -- 서버 자동 재시작
+
+관계형 db -> 정규화
+비관계형 db -> 정규화 불필요 == 빠른 입출력이 필요한 서비스에 좋다.
+굳이 빠른 입출력이 비관계형인건 아니다. 활용도에 따라서 잘 골라야 한다.
+
+bootstrap css,html 코드 정리 사이트
+
+mongodb - document database
+폴더안에 파일을 넣는 형식 
+
+
+사용자에서 db로 데이터를 넣을때 데이터를 검사하는 서버가 필요하다.
+npm install mongodb@5
+
+document 1개에 게시물을 매우 많은 양을 넣어도 되는가?
+너무 많으면 원하는데이터를 찾기가 어렵다.
+document 1개는 최대 16MB까지 저장이 가능하다.
+모든 doc의 id 값은 모두 다르다.
+
+
+오늘한 쌩쇼 - mongodb사이트에 지정한 인터넷 주소가 집으로 되어있음
+지금 랩실에서 하는데 안되서 코드 다 보면서 위치옮기고 별 이상한짓 다함
+그냥 mongdb사이트에 내가 현재 쓰는 인터넷 등록해야함 ㅅㅂ
+
+html 파일 서버데이터에 어떻게 넣음? -> template engine 사용 ex)pug/ ejs/ handlebars
+넣고 싶으면 ejs파일을 만들어야한다.
+server.js파이에서 응답.render 형식으로 기능 구현
+ejs파일에 넣고싶은 부분에 <%=JSON.stringify(post)%> ejs파일에서 이런 형식으로 넣는다. 
+== 서버사이브 렌더링 
+클라이언트 렌더링 빈html, 데이터만 보내고 유저 브라우저에 html에서 생서 -> 부드러운 사이트 제작 가능
+
+반복문 for(let i = 0 ; i < 3; i++_){console.log(i)}
+
+<%- include('nav.ejs') %> ejs파일 복사 붙여넣기 기능이다.
+<%- 과 <%= 의차이 <%=는 글자 그대로 <%-는 html로 인식하여 웹페이지를 구성한다.
